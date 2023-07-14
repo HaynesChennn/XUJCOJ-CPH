@@ -2,7 +2,7 @@
 
 ## 功能演示
 
-![Demo](img\Demo.gif)
+![Demo](https://github.com/IanChen0713/XujcOJ-CPH/blob/main/img/Demo.gif)
 
 ## 简介
 
