@@ -20,13 +20,13 @@
 
     button.textContent = " CPH";
     button.style.width = "75px";
-    button.style.height = "25px";
+    button.style.height = "28px";
     button.style.align = "center";
     button.style.color = "white";
     button.style.background = "#5bc0de";
     button.style.border = "1px solid #46b8da";
     button.style.borderRadius = "4px";
-    button.style.marginTop = "13px";
+    button.style.marginTop = "11px";
     button.style.fontFamily = "sans-serif";
 
     var elements = document.getElementsByClassName("title");
