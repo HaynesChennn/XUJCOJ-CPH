@@ -27,5 +27,5 @@ XujcOJ-CPH 是为了更便捷地使用[Competitive Programming Helper(CPH)](http
     + [安装CPH](https://marketplace.visualstudio.com/items?itemName=DivyanshuAgrawal.competitive-programming-helper)
     + [CPH使用指南](https://github.com/agrawal-d/cph/blob/main/docs/user-guide.md)
 2. 在浏览器中安装 Tampermonkey 插件，参考文章[Tampermonkey 油猴插件-安装与使用教程](https://zhuanlan.zhihu.com/p/128453110)
-3. [安装脚本](https://greasyfork.org/zh-CN/scripts/470822-xujcoj-cph)
+3. [安装XujcOJ-CPH](https://greasyfork.org/zh-CN/scripts/470822-xujcoj-cph)
 4. 大功告成
