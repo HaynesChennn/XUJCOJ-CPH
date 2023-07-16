@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         XujcOJ-CPH
+// @name         XUJCOJ-CPH
 // @version      0.3
-// @description  Competitive Companion For XujcOJ
+// @description  Competitive Companion For XUJCOJ
 // @author       Haynes-ROB21026
 // @match        *://xujcoj.com/home/contest/*/problem/*
 // @match        *://xujcoj.com/home/problem/detail/*
