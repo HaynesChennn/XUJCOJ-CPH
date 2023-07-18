@@ -2,11 +2,11 @@
 
 ## 功能演示
 + 新建文件
-![New_File](https://github.com/IanChen0713/XUJCOJ-CPH/blob/main/img/New_File.gif)
+![New_File](https://cdn.jsdelivr.net/gh/ianchen0713/XUJCOJ-CPH@main/img/New_File.gif)
 + 测试单组样例
-![Single_Example](https://github.com/IanChen0713/XUJCOJ-CPH/blob/main/img/Single_Example.gif)
+![Single_Example](https://cdn.jsdelivr.net/gh/ianchen0713/XUJCOJ-CPH@main/img/Single_Example.gif)
 + 测试多组样例
-![Multiple_Examples](https://github.com/IanChen0713/XUJCOJ-CPH/blob/main/img/Multiple_Examples.gif)
+![Multiple_Examples](https://cdn.jsdelivr.net/gh/ianchen0713/XUJCOJ-CPH@main/img/Multiple_Examples.gif)
 
 ## 简介
 
