@@ -10,7 +10,7 @@
 
 ## 简介
 
-XUJCOJ-CPH 是为了更便捷地使用[Competitive Programming Helper(CPH)](https://github.com/agrawal-d/cph)的油猴脚本而设计的。它的功能是将题目的样例输入发送到 Visual Studio Code 中，并自动运行代码以与预期输出进行比对，从而判断答案的正确性。
+XUJCOJ-CPH 是为了更便捷地使用[Competitive Programming Helper(CPH)](https://github.com/agrawal-d/cph)的油猴脚本而设计的。它的功能是自动创建文件，导入自己的模板，并将题目中的测试样例从浏览器中获取，在Visual Studio Code中自动运行代码以与预期输出进行比对。
 如果想要导入Codeforces/AtCoder等OJ的题目，可以使用[Competitive Companion](https://github.com/jmerle/competitive-companion)插件
 
 ## 支持语言
