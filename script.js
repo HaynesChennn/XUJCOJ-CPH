@@ -5,6 +5,7 @@
 // @author       Haynes-ROB21026
 // @match        *://*.xujcoj.com/home/contest/*/problem/*
 // @match        *://*.xujcoj.com/home/problem/detail/*
+// @require      https://res.zvo.cn/translate/translate.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=xujcoj.com
 // ==/UserScript==
 
