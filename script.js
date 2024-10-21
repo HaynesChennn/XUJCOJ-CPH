@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         XUJCOJ-CPH
-// @version      0.3
+// @version      0.4
 // @description  Competitive Companion For XUJCOJ
 // @author       Haynes-ROB21026
 // @match        *://xujcoj.com/home/contest/*/problem/*
 // @match        *://xujcoj.com/home/problem/detail/*
+// @require      https://res.zvo.cn/translate/translate.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=xujcoj.com
 // ==/UserScript==
 
@@ -32,6 +33,7 @@
 
     var elements = document.getElementsByClassName("title");
     var titleContent = elements[0].innerText;
+    var en_title = "";
     var p_input = document.getElementById("copyTarget").innerText;
     var p_output = document.getElementById("copyTarget2").innerText;
     p_input = makeInput(p_input);
@@ -44,6 +46,12 @@
     var time = time_mem.match(/\d+/g)[0];
     var mem = time_mem.match(/\d+/g)[1];
 
+    translate.language.setDefaultTo('english');
+    translate.request.translateText(titleContent, function (data) {
+        en_title = data.text[0].replace(/:\s+/g, ':').replace(/\s+/g, '_');;
+        console.log(en_title);
+    });
+
     console.log(currentUrl);
     console.log(titleContent);
     console.log(time);
@@ -53,10 +61,17 @@
 
     button.addEventListener("click", clickBotton);
     function clickBotton() {
+
+        if (en_title == "") {
+            console.log("翻译未完成，请稍后再试...");
+            setTimeout(clickBotton, 1000);
+            return;
+        }
+
         setTimeout(function () {
             var url = "http://127.0.0.1:27121";
             var data = JSON.stringify({
-                name: titleContent,
+                name: en_title,
                 url: currentUrl,
                 interactive: false,
                 memoryLimit: mem / 1024,
