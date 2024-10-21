@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         XUJCOJ-CPH
-// @version      0.4
+// @version      0.5
 // @description  Competitive Companion For XUJCOJ
 // @author       Haynes-ROB21026
 // @match        *://*.xujcoj.com/home/contest/*/problem/*
