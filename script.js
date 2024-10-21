@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         XUJCOJ-CPH
-// @version      0.5
+// @version      1.0
 // @description  Competitive Companion For XUJCOJ
 // @author       Haynes-ROB21026
 // @match        *://*.xujcoj.com/home/contest/*/problem/*
 // @match        *://*.xujcoj.com/home/problem/detail/*
-// @require      https://res.zvo.cn/translate/translate.js
+// @require      https://cdn.jsdelivr.net/gh/xnx3/translate@df4cf697fc29551721738855050fdfa650b0689a/translate.js/translate.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=xujcoj.com
 // ==/UserScript==
 
