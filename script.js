@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         XUJCOJ-CPH
-// @version      1.0
+// @version      1.1
 // @description  Competitive Companion For XUJCOJ
 // @author       Haynes-ROB21026
 // @match        *://*.xujcoj.com/home/contest/*/problem/*
@@ -46,6 +46,7 @@
     var time = time_mem.match(/\d+/g)[0];
     var mem = time_mem.match(/\d+/g)[1];
 
+    translate.service.use('client.edge');
     translate.language.setDefaultTo('english');
     translate.request.translateText(titleContent, function (data) {
         en_title = data.text[0].replace(/:\s+/g, ':').replace(/\s+/g, '_');;
