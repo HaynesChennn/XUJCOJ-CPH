@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name         XUJCOJ-CPH
-// @version      1.1
+// @version      1.2
 // @description  Competitive Companion For XUJCOJ
 // @author       Haynes-ROB21026
 // @match        *://*.xujcoj.com/home/contest/*/problem/*
 // @match        *://*.xujcoj.com/home/problem/detail/*
-// @require      https://cdn.jsdelivr.net/gh/xnx3/translate@df4cf697fc29551721738855050fdfa650b0689a/translate.js/translate.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=xujcoj.com
 // ==/UserScript==
 
@@ -33,7 +32,6 @@
 
     var elements = document.getElementsByClassName("title");
     var titleContent = elements[0].innerText;
-    var en_title = "";
     var p_input = document.getElementById("copyTarget").innerText;
     var p_output = document.getElementById("copyTarget2").innerText;
     p_input = makeInput(p_input);
@@ -46,15 +44,34 @@
     var time = time_mem.match(/\d+/g)[0];
     var mem = time_mem.match(/\d+/g)[1];
 
-    translate.service.use('client.edge');
-    translate.language.setDefaultTo('english');
-    translate.request.translateText(titleContent, function (data) {
-        en_title = data.text[0].replace(/:\s+/g, ':').replace(/\s+/g, '_');;
-        console.log(en_title);
-    });
+    // 包含contest 
+    if (currentUrl.includes("contest")) {
+        const match = currentUrl.match(/contest\/(\d+)\/problem\/(\d+)/);
+        var contest, problem, title;
+
+        if (match) {
+            contest = match[1];
+            problem = match[2];
+
+            console.log("contest =", contest);
+            console.log("problem =", problem);
+            title = 'XUJCOJ-C' + contest + '-P' + problem;
+        } else {
+            console.log("未找到匹配项");
+        }
+    } else {
+        const match = currentUrl.match(/problem\/detail\/(\d+)/);
+        if (match) {
+            problem = match[1];
+            title = 'XUJCOJ-P' + problem;
+        } else {
+            console.log("未找到匹配项");
+        }
+    }
 
     console.log(currentUrl);
     console.log(titleContent);
+    console.log(title);
     console.log(time);
     console.log(mem);
     console.log(p_input);
@@ -62,43 +79,34 @@
 
     button.addEventListener("click", clickBotton);
     function clickBotton() {
-
-        if (en_title == "") {
-            console.log("翻译未完成，请稍后再试...");
-            setTimeout(clickBotton, 1000);
-            return;
-        }
-
-        setTimeout(function () {
-            var url = "http://127.0.0.1:27121";
-            var data = JSON.stringify({
-                name: en_title,
-                url: currentUrl,
-                interactive: false,
-                memoryLimit: mem / 1024,
-                timeLimit: time * 1000,
-                tests: [
-                    {
-                        input: p_input,
-                        output: p_output,
-                    },
-                ],
-                testType: "single",
-                input: {
-                    type: "stdin",
+        var url = "http://127.0.0.1:27121";
+        var data = JSON.stringify({
+            name: title,
+            url: currentUrl,
+            interactive: false,
+            memoryLimit: mem / 1024,
+            timeLimit: time * 1000,
+            tests: [
+                {
+                    input: p_input,
+                    output: p_output,
                 },
-                output: {
-                    type: "stdout",
-                },
-            });
+            ],
+            testType: "single",
+            input: {
+                type: "stdin",
+            },
+            output: {
+                type: "stdout",
+            },
+        });
 
-            fetch(url, {
-                method: "POST",
-                body: data,
-            }).then(function () {
-                console.log(["Send CPH Success"]);
-            });
-        }, 100);
+        fetch(url, {
+            method: "POST",
+            body: data,
+        }).then(function () {
+            console.log(["Send CPH Success"]);
+        });
     }
 
     function makeInput(inputStr) {
